@@ -4,22 +4,15 @@ import type { AxiosRequestConfig } from 'axios'
 export const PORT = process.env.PORT || 2333
 export const API_VERSION = 2
 
+// [FIX] Removed hardcoded author-specific domains for fork safety
 export const CROSS_DOMAIN = {
   allowedOrigins: argv.allowed_origins
     ? argv.allowed_origins?.split?.(',')
     : [
-        'innei.ren',
-        '*.innei.ren',
-
         'localhost:*',
         '127.0.0.1',
-        'mbp.cc',
-        'local.innei.test',
-        '22333322.xyz',
         '*.dev',
       ],
-
-  // allowedReferer: 'innei.ren',
 }
 
 export const MONGO_DB = {

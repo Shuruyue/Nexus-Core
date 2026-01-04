@@ -18,8 +18,9 @@ import { logger } from './global/consola.global'
 import { isMainProcess, isTest } from './global/env.global'
 import { checkInit } from './utils/check-init.util'
 
+// [FIX] Removed hardcoded author-specific domains for fork safety
 const Origin: false | string[] = Array.isArray(CROSS_DOMAIN.allowedOrigins)
-  ? [...CROSS_DOMAIN.allowedOrigins, '*.shizuri.net', '22333322.xyz']
+  ? CROSS_DOMAIN.allowedOrigins
   : false
 
 declare const module: any

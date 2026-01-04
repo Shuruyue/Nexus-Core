@@ -99,28 +99,18 @@ export const API_VERSION = 2
 
 export const DEMO_MODE = argv.demo || false
 
+// [FIX] Removed hardcoded author-specific domains for fork safety
 export const CROSS_DOMAIN = {
   allowedOrigins: argv.allowed_origins
     ? argv.allowed_origins?.split?.(',')
     : [
-        'innei.ren',
-        '*.innei.ren',
-
         'localhost:*',
         '127.0.0.1',
-        'mbp.cc',
-        'local.innei.test',
-        '22333322.xyz',
         '*.dev',
         '*.vercel.app',
-        'innei.in',
-        '*.innei.in',
-
         'localhost:9528',
         'localhost:2323',
       ],
-
-  // allowedReferer: 'innei.ren',
 }
 
 export const MONGO_DB = {
